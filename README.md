@@ -27,7 +27,7 @@ Change: 2019-06-07 18:13:35.000000000 +0000
 
 #### Facade
 ```php
-$stat = (new PhpStatFacade())->process(...);
+$stat = (new StatFacade())->process(...);
 
 echo $stat->getBlocks();      # 8
 echo $stat->getDateAccess();  # DateTime {date: 2019-06-07 18:13:35.0 +00:00}
@@ -91,4 +91,4 @@ $stat->fromArray([
 ```
 
 
-See [`PhpStatOutput\Output\Stat`](https://github.com/oliwierptak/php-stat-output/blob/master/src/Output/Stat.php) for details.
+See [`Phuxtil\Stat\Output\Stat`](https://github.com/oliwierptak/php-stat-output/blob/master/src/Stat/Output/Stat.php) for details.
