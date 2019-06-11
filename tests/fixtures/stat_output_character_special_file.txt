@@ -1,0 +1,8 @@
+  File: /dev/tty
+  Size: 0         	Blocks: 0          IO Block: 4096   character special file
+Device: 9eh/158d	Inode: 1805066     Links: 1     Device type: 5,0
+Access: (0666/crw-rw-rw-)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2019-05-27 10:09:07.973896000 +0000
+Modify: 2019-05-27 10:09:07.973896000 +0000
+Change: 2019-05-27 10:09:07.973896000 +0000
+ Birth: -
