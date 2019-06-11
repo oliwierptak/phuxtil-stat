@@ -91,4 +91,4 @@ $stat->fromArray([
 ```
 
 
-See [`Phuxtil\Stat\Output\Stat`](https://github.com/oliwierptak/php-stat-output/blob/master/src/Stat/Output/Stat.php) for details.
+See [`Phuxtil\Stat\Output\Stat`](https://github.com/oliwierptak/phuxtil-stat/blob/master/src/Stat/Output/Stat.php) for details.
