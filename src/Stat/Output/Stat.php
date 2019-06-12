@@ -2,6 +2,7 @@
 
 namespace Phuxtil\Stat\Output;
 
+use Phuxtil\Stat\DefinesInterface;
 use Phuxtil\Stat\Processor\LIne\Blocks;
 use Phuxtil\Stat\Processor\LIne\DateAccess;
 use Phuxtil\Stat\Processor\LIne\DateChange;
@@ -361,5 +362,25 @@ class Stat
             Blocks::TYPE => $this->blocks,
             IoBlock::TYPE => $this->ioBlock,
         ];
+    }
+
+    public function isFile(): bool
+    {
+        return $this->type === DefinesInterface::VALUE_FILE;
+    }
+
+    public function isDir(): bool
+    {
+        return $this->type === DefinesInterface::VALUE_DIR;
+    }
+
+    public function isLink(): bool
+    {
+        return $this->type === DefinesInterface::VALUE_LINK;
+    }
+
+    public function isCharFile(): bool
+    {
+        return $this->type === DefinesInterface::VALUE_CHAR;
     }
 }

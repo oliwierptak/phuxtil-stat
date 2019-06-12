@@ -90,6 +90,7 @@ class StatFacadeTest extends TestCase
         $this->assertEquals(DefinesInterface::VALUE_DIR, $output->getType());
         $this->assertEquals(0, $output->getUid());
         $this->assertEquals('root', $output->getUser());
+        $this->assertTrue($output->isDir());
     }
 
     public function test_process_special_file()
@@ -116,6 +117,7 @@ class StatFacadeTest extends TestCase
         $this->assertEquals(DefinesInterface::VALUE_CHAR, $output->getType());
         $this->assertEquals(0, $output->getUid());
         $this->assertEquals('root', $output->getUser());
+        $this->assertTrue($output->isCharFile());
     }
 
     public function test_process_regular_empty_file()
@@ -142,5 +144,6 @@ class StatFacadeTest extends TestCase
         $this->assertEquals(DefinesInterface::VALUE_FILE, $output->getType());
         $this->assertEquals(0, $output->getUid());
         $this->assertEquals('root', $output->getUser());
+        $this->assertTrue($output->isFile());
     }
 }
