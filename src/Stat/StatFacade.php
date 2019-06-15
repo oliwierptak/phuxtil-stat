@@ -4,7 +4,7 @@ namespace Phuxtil\Stat;
 
 use Phuxtil\Stat\Output\Stat;
 
-class StatFacade
+class StatFacade implements StatFacadeInterface
 {
     /**
      * @var \Phuxtil\Stat\StatFactory
