@@ -3,22 +3,22 @@
 namespace Phuxtil\Stat\Output;
 
 use Phuxtil\Stat\DefinesInterface;
-use Phuxtil\Stat\Processor\LIne\Blocks;
-use Phuxtil\Stat\Processor\LIne\DateAccess;
-use Phuxtil\Stat\Processor\LIne\DateChange;
-use Phuxtil\Stat\Processor\LIne\DateModify;
-use Phuxtil\Stat\Processor\LIne\Device;
-use Phuxtil\Stat\Processor\LIne\File;
-use Phuxtil\Stat\Processor\LIne\Gid;
-use Phuxtil\Stat\Processor\LIne\Group;
-use Phuxtil\Stat\Processor\LIne\Inode;
-use Phuxtil\Stat\Processor\LIne\IoBlock;
-use Phuxtil\Stat\Processor\LIne\Links;
-use Phuxtil\Stat\Processor\LIne\Permission;
-use Phuxtil\Stat\Processor\LIne\Size;
-use Phuxtil\Stat\Processor\LIne\Type;
-use Phuxtil\Stat\Processor\LIne\Uid;
-use Phuxtil\Stat\Processor\LIne\User;
+use Phuxtil\Stat\Processor\Line\Blocks;
+use Phuxtil\Stat\Processor\Line\DateAccess;
+use Phuxtil\Stat\Processor\Line\DateChange;
+use Phuxtil\Stat\Processor\Line\DateModify;
+use Phuxtil\Stat\Processor\Line\Device;
+use Phuxtil\Stat\Processor\Line\File;
+use Phuxtil\Stat\Processor\Line\Gid;
+use Phuxtil\Stat\Processor\Line\Group;
+use Phuxtil\Stat\Processor\Line\Inode;
+use Phuxtil\Stat\Processor\Line\IoBlock;
+use Phuxtil\Stat\Processor\Line\Links;
+use Phuxtil\Stat\Processor\Line\Permission;
+use Phuxtil\Stat\Processor\Line\Size;
+use Phuxtil\Stat\Processor\Line\Type;
+use Phuxtil\Stat\Processor\Line\Uid;
+use Phuxtil\Stat\Processor\Line\User;
 
 class Stat
 {
