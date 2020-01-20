@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace PhuxtilTests\Functional\Stat;
 
 use PHPUnit\Framework\TestCase;

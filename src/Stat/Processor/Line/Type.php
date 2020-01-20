@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Phuxtil\Stat\Processor\Line;
 
 use Phuxtil\Stat\DefinesInterface;

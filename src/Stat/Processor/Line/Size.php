@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Phuxtil\Stat\Processor\Line;
 
 class Size extends AbstractLineProcessor
