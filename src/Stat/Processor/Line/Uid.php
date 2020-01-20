@@ -21,7 +21,7 @@ class Uid extends AbstractLineProcessor
         $value = parent::extractValue();
 
         $matches = [];
-        \preg_match('/Uid:\(([0-9]+)\/([a-zA-Z0-9]+)\)/', $value, $matches);
+        \preg_match('/Uid:\(([0-9]+)\/([^)]+)\)/', $value, $matches);
 
         return (int)$matches[1];
     }

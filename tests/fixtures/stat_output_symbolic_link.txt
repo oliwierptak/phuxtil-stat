@@ -1,7 +1,7 @@
   File: remote_link.txt -> /tmp/remote_fs/remote.txt
   Size: 25        	Blocks: 0          IO Block: 4096   symbolic link
 Device: 57h/87d	Inode: 9980288     Links: 1
-Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: (0777/lrwxrwxrwx)  Uid: (    33/    www-data)   Gid: (    33/    www-data)
 Access: 2019-06-09 12:26:01.000000000 +0000
 Modify: 2019-06-09 12:26:01.000000000 +0000
 Change: 2019-06-09 12:26:01.000000000 +0000

@@ -1,7 +1,7 @@
   File: remote_fs/
   Size: 128       	Blocks: 0          IO Block: 4096   directory
 Device: 57h/87d	Inode: 9979987     Links: 4
-Access: (0755/drwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: (0755/drwxr-xr-x)  Uid: (    33/    www-data)   Gid: (    33/    www-data)
 Access: 2019-06-09 12:29:22.000000000 +0000
 Modify: 2019-06-09 12:26:01.000000000 +0000
 Change: 2019-06-09 12:26:01.000000000 +0000

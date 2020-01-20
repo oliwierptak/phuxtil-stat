@@ -28,16 +28,16 @@ class StatFacadeTest extends TestCase
         $this->assertEquals(1559931215, $output->getDateChange()->getTimestamp());
         $this->assertEquals('57h/87d', $output->getDevice());
         $this->assertEquals('/tmp/remote_fs/remote.txt', $output->getFilename());
-        $this->assertEquals(0, $output->getGid());
-        $this->assertEquals('root', $output->getGroup());
+        $this->assertEquals(33, $output->getGid());
+        $this->assertEquals('www-data', $output->getGroup());
         $this->assertEquals(9920467, $output->getInode());
         $this->assertEquals(4096, $output->getIoBlock());
         $this->assertEquals(1, $output->getLinks());
         $this->assertEquals('0644', $output->getPermission());
         $this->assertEquals(70, $output->getSize());
         $this->assertEquals(DefinesInterface::VALUE_FILE, $output->getType());
-        $this->assertEquals(0, $output->getUid());
-        $this->assertEquals('root', $output->getUser());
+        $this->assertEquals(33, $output->getUid());
+        $this->assertEquals('www-data', $output->getUser());
     }
 
     public function test_process_symlink()
@@ -54,16 +54,16 @@ class StatFacadeTest extends TestCase
         $this->assertEquals(1560083161, $output->getDateChange()->getTimestamp());
         $this->assertEquals('57h/87d', $output->getDevice());
         $this->assertEquals('remote_link.txt->/tmp/remote_fs/remote.txt', $output->getFilename());
-        $this->assertEquals(0, $output->getGid());
-        $this->assertEquals('root', $output->getGroup());
+        $this->assertEquals(33, $output->getGid());
+        $this->assertEquals('www-data', $output->getGroup());
         $this->assertEquals(9980288, $output->getInode());
         $this->assertEquals(4096, $output->getIoBlock());
         $this->assertEquals(1, $output->getLinks());
         $this->assertEquals('0777', $output->getPermission());
         $this->assertEquals(25, $output->getSize());
         $this->assertEquals(DefinesInterface::VALUE_LINK, $output->getType());
-        $this->assertEquals(0, $output->getUid());
-        $this->assertEquals('root', $output->getUser());
+        $this->assertEquals(33, $output->getUid());
+        $this->assertEquals('www-data', $output->getUser());
     }
 
     public function test_process_dir()
@@ -80,16 +80,16 @@ class StatFacadeTest extends TestCase
         $this->assertEquals(1560083161, $output->getDateChange()->getTimestamp());
         $this->assertEquals('57h/87d', $output->getDevice());
         $this->assertEquals('remote_fs/', $output->getFilename());
-        $this->assertEquals(0, $output->getGid());
-        $this->assertEquals('root', $output->getGroup());
+        $this->assertEquals(33, $output->getGid());
+        $this->assertEquals('www-data', $output->getGroup());
         $this->assertEquals(9979987, $output->getInode());
         $this->assertEquals(4096, $output->getIoBlock());
         $this->assertEquals(4, $output->getLinks());
         $this->assertEquals('0755', $output->getPermission());
         $this->assertEquals(128, $output->getSize());
         $this->assertEquals(DefinesInterface::VALUE_DIR, $output->getType());
-        $this->assertEquals(0, $output->getUid());
-        $this->assertEquals('root', $output->getUser());
+        $this->assertEquals(33, $output->getUid());
+        $this->assertEquals('www-data', $output->getUser());
         $this->assertTrue($output->isDir());
     }
 
@@ -107,16 +107,16 @@ class StatFacadeTest extends TestCase
         $this->assertEquals(1558951747, $output->getDateChange()->getTimestamp());
         $this->assertEquals('9eh/158d', $output->getDevice());
         $this->assertEquals('/dev/tty', $output->getFilename());
-        $this->assertEquals(0, $output->getGid());
-        $this->assertEquals('root', $output->getGroup());
+        $this->assertEquals(33, $output->getGid());
+        $this->assertEquals('www-data', $output->getGroup());
         $this->assertEquals(1805066, $output->getInode());
         $this->assertEquals(4096, $output->getIoBlock());
         $this->assertEquals(1, $output->getLinks());
         $this->assertEquals('0666', $output->getPermission());
         $this->assertEquals(0, $output->getSize());
         $this->assertEquals(DefinesInterface::VALUE_CHAR, $output->getType());
-        $this->assertEquals(0, $output->getUid());
-        $this->assertEquals('root', $output->getUser());
+        $this->assertEquals(33, $output->getUid());
+        $this->assertEquals('www-data', $output->getUser());
         $this->assertTrue($output->isCharFile());
     }
 
@@ -134,16 +134,16 @@ class StatFacadeTest extends TestCase
         $this->assertEquals(1560101586, $output->getDateChange()->getTimestamp());
         $this->assertEquals('57h/87d', $output->getDevice());
         $this->assertEquals('/tmp/remote_fs/remote.txt', $output->getFilename());
-        $this->assertEquals(0, $output->getGid());
-        $this->assertEquals('root', $output->getGroup());
+        $this->assertEquals(33, $output->getGid());
+        $this->assertEquals('www-data', $output->getGroup());
         $this->assertEquals(10001013, $output->getInode());
         $this->assertEquals(4096, $output->getIoBlock());
         $this->assertEquals(1, $output->getLinks());
         $this->assertEquals('0644', $output->getPermission());
         $this->assertEquals(0, $output->getSize());
         $this->assertEquals(DefinesInterface::VALUE_FILE, $output->getType());
-        $this->assertEquals(0, $output->getUid());
-        $this->assertEquals('root', $output->getUser());
+        $this->assertEquals(33, $output->getUid());
+        $this->assertEquals('www-data', $output->getUser());
         $this->assertTrue($output->isFile());
     }
 }
