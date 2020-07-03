@@ -148,4 +148,30 @@ class StatFacadeTest extends TestCase
         $this->assertEquals('www-data', $output->getUser());
         $this->assertTrue($output->isFile());
     }
+
+    public function test_process_filename_with_quotes_for_older_version()
+    {
+        $facade = new StatFacade();
+
+        $output = \file_get_contents(static::STAT_OUTPUT_REGULAR_FILE);
+        $output = str_replace("/tmp/remote_fs/remote.txt", "`/tmp/remote_fs/remote.txt'", $output);
+        $output = $facade->process($output);
+
+        $this->assertEquals(8, $output->getBlocks());
+        $this->assertEquals(1559931215, $output->getDateAccess()->getTimestamp());
+        $this->assertEquals(1559931215, $output->getDateModify()->getTimestamp());
+        $this->assertEquals(1559931215, $output->getDateChange()->getTimestamp());
+        $this->assertEquals('57h/87d', $output->getDevice());
+        $this->assertEquals('/tmp/remote_fs/remote.txt', $output->getFilename());
+        $this->assertEquals(33, $output->getGid());
+        $this->assertEquals('www-data', $output->getGroup());
+        $this->assertEquals(9920467, $output->getInode());
+        $this->assertEquals(4096, $output->getIoBlock());
+        $this->assertEquals(1, $output->getLinks());
+        $this->assertEquals('0644', $output->getPermission());
+        $this->assertEquals(70, $output->getSize());
+        $this->assertEquals(DefinesInterface::VALUE_FILE, $output->getType());
+        $this->assertEquals(33, $output->getUid());
+        $this->assertEquals('www-data', $output->getUser());
+    }
 }
