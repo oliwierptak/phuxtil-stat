@@ -6,23 +6,20 @@ namespace Phuxtil\Stat\Processor\Line;
 
 class Permission extends AbstractLineProcessor
 {
-    const TYPE = 'permission';
+    public const TYPE = 'permission';
 
-    /**
-     * @var string
-     */
-    protected $pattern = 'Access:';
+    protected string $pattern = 'Access:';
 
-    /**
-     * @var int
-     */
-    protected $position = 3;
+    protected int $position = 3;
 
-    protected function extractValue()
+    protected int $positionColumn = 1;
+
+    protected function extractValue(): mixed
     {
         $value = parent::extractValue();
-        $value = \preg_filter('/^\(([0-9]+)\/(.*)/', '$1', $value);
 
-        return $value;
+        $value = preg_replace('([^0-9]+)', '', $value);
+
+        return (string)$value;
     }
 }

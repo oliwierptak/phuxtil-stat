@@ -6,25 +6,20 @@ namespace Phuxtil\Stat\Processor\Line;
 
 class Group extends AbstractLineProcessor
 {
-    const TYPE = 'group';
+    public const TYPE = 'group';
 
-    /**
-     * @var string
-     */
-    protected $pattern = 'Access:';
+    protected string $pattern = 'Access:';
 
-    /**
-     * @var int
-     */
-    protected $position = 3;
+    protected int $position = 3;
 
-    protected function extractValue()
+    protected int $positionColumn = 9;
+
+    protected function extractValue(): mixed
     {
         $value = parent::extractValue();
 
-        $matches = [];
-        \preg_match('/Gid:\(([0-9]+)\/([^)]+)\)/', $value, $matches);
+        $value = preg_replace('/([)])/i', '', $value);
 
-        return $matches[2];
+        return (string)$value;
     }
 }

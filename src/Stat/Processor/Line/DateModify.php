@@ -6,15 +6,9 @@ namespace Phuxtil\Stat\Processor\Line;
 
 class DateModify extends DateAccess
 {
-    const TYPE = 'filemtime';
+    public const TYPE = 'filemtime';
 
-    /**
-     * @var string
-     */
-    protected $pattern = 'Modify:';
+    protected string $pattern = 'Modify:';
 
-    /**
-     * @var int
-     */
-    protected $position = 5;
+    protected int $position = 5;
 }

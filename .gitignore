@@ -1,3 +1,5 @@
+.idea/*
 tests/logs/*
 vendor/*
 !.gitignore
+.phpunit.result.cache

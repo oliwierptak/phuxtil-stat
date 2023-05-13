@@ -1,0 +1,8 @@
+Fichier : « /var/www/maintenance.yml »
+   Taille : 550         Blocs : 8          ES blocs : 4096   fichier
+Device : fe03h/65027d   Inode : 10745883    Liens : 1
+Accès : (0644/-rw-r--r--)  UID : ( 1002/  www-data)   GID : ( 1002/  www-data)
+Accès : 2020-01-16 14:43:29.966039892 +0100
+Modi. : 2020-01-10 16:35:48.000000000 +0100
+Chgt  : 2020-01-16 14:43:29.966039892 +0100
+Créé  : -
