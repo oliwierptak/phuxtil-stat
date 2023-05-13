@@ -3,3 +3,4 @@ tests/logs/*
 vendor/*
 !.gitignore
 .phpunit.result.cache
+composer.lock
