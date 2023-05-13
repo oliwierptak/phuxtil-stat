@@ -1,0 +1,7 @@
+#!/bin/sh
+
+vendor/bin/popo generate -s popo \
+--classPluginCollection='Phuxtil\Popo\Plugin\ClassPlugin\IsCharFileClassPlugin' \
+--classPluginCollection='Phuxtil\Popo\Plugin\ClassPlugin\IsDirClassPlugin' \
+--classPluginCollection='Phuxtil\Popo\Plugin\ClassPlugin\IsFileClassPlugin' \
+--classPluginCollection='Phuxtil\Popo\Plugin\ClassPlugin\IsLinkClassPlugin'

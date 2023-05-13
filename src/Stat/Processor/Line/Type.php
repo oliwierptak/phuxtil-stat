@@ -16,6 +16,9 @@ class Type extends AbstractLineProcessor
 
     protected int $positionColumn = 7;
 
+    /**
+     * @return string
+     */
     protected function extractValue(): mixed
     {
         $tokens = $this->extractLineTokens();

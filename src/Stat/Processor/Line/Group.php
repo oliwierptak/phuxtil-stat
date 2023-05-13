@@ -14,6 +14,9 @@ class Group extends AbstractLineProcessor
 
     protected int $positionColumn = 9;
 
+    /**
+     * @return string
+     */
     protected function extractValue(): mixed
     {
         $value = parent::extractValue();

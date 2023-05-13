@@ -1,30 +1,42 @@
 {
-    "name": "phuxtil/stat",
-    "description": "Easy interface for output of 'stat' unix command",
-    "type": "library",
-    "license": "MIT",
-    "minimum-stability": "stable",
-    "prefer-stable": true,
-    "require": {
-        "php": "^8"
-    },
-    "require-dev": {
-        "symfony/var-dumper": "^4|^5|^6",
-        "phpunit/phpunit": "^9|^10"
-    },
-    "autoload": {
-        "psr-4": {
-            "Phuxtil\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "PhuxtilTests\\Functional\\": "tests/Functional"
-        }
-    },
-    "scripts": {
-        "tests": [
-            "vendor/bin/phpunit --testdox --no-coverage"
-        ]
+  "name": "phuxtil/stat",
+  "description": "Easy interface for output of 'stat' unix command",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "php": "^8"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^4|^5|^6",
+    "phpunit/phpunit": "^9|^10",
+    "popo/generator": "^6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Phuxtil\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PhuxtilTests\\Functional\\": "tests/Functional"
+    }
+  },
+  "scripts": {
+    "popo": [
+      "bin/generate-popo"
+    ],
+    "tests": [
+      "vendor/bin/phpunit --testdox --no-coverage"
+    ],
+    "tests-coverage": [
+      "vendor/bin/phpunit --testdox --group acceptance,default"
+    ]
+  },
+  "scripts-descriptions": {
+    "popo": "Generate POPO files",
+    "tests": "Quick tests",
+    "tests-coverage": "Tests with coverage"
+  }
 }

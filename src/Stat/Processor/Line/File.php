@@ -16,6 +16,8 @@ class File extends AbstractLineProcessor
 
     /**
      * Includes fix for different stat output for older versions
+     *
+     * @return string
      */
     protected function extractValue(): mixed
     {

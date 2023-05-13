@@ -13,4 +13,12 @@ class IoBlock extends AbstractLineProcessor
     protected int $position = 1;
 
     protected int $positionColumn = 6;
+
+    /**
+     * @return int
+     */
+    protected function extractValue(): mixed
+    {
+        return (int)parent::extractValue();
+    }
 }

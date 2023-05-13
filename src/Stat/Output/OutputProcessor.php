@@ -4,6 +4,7 @@ namespace Phuxtil\Stat\Output;
 
 
 use Phuxtil\Stat\Processor\LineProcessorInterface;
+use Phuxtil\Stat\Stat;
 
 class OutputProcessor
 {
@@ -18,6 +19,7 @@ class OutputProcessor
     {
         $lines = explode(PHP_EOL, $input);
         $result = $this->processLines($lines);
+
         return (new Stat())
             ->fromArray($result);
     }

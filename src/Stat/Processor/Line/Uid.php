@@ -14,6 +14,9 @@ class Uid extends AbstractLineProcessor
 
     protected int $positionColumn = 4;
 
+    /**
+     * @return int
+     */
     protected function extractValue(): mixed
     {
         $value = parent::extractValue();

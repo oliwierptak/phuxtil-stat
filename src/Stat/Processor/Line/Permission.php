@@ -14,6 +14,9 @@ class Permission extends AbstractLineProcessor
 
     protected int $positionColumn = 1;
 
+    /**
+     * @return string
+     */
     protected function extractValue(): mixed
     {
         $value = parent::extractValue();

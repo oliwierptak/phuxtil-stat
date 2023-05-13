@@ -14,6 +14,9 @@ class Gid extends AbstractLineProcessor
 
     protected int $positionColumn = 8;
 
+    /**
+     * @return int
+     */
     protected function extractValue(): mixed
     {
         $value = parent::extractValue();

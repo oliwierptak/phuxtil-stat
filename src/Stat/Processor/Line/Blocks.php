@@ -14,4 +14,12 @@ class Blocks extends AbstractLineProcessor
 
     protected int $positionColumn = 3;
 
+    /**
+     * @return int
+     */
+    protected function extractValue(): mixed
+    {
+        return (int)parent::extractValue();
+    }
+
 }

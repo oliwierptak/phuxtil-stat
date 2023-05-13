@@ -13,4 +13,12 @@ class Size extends AbstractLineProcessor
     protected int $position = 1;
 
     protected int $positionColumn = 1;
+
+    /**
+     * @return int
+     */
+    protected function extractValue(): mixed
+    {
+        return (int)parent::extractValue();
+    }
 }

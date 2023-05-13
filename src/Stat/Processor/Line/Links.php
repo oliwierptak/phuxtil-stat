@@ -14,4 +14,11 @@ class Links extends AbstractLineProcessor
 
     protected int $positionColumn = 5;
 
+    /**
+     * @return int
+     */
+    protected function extractValue(): mixed
+    {
+        return (int)parent::extractValue();
+    }
 }

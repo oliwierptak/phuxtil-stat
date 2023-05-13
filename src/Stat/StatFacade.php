@@ -4,8 +4,6 @@ declare(strict_types = 1);
 
 namespace Phuxtil\Stat;
 
-use Phuxtil\Stat\Output\Stat;
-
 class StatFacade implements StatFacadeInterface
 {
     /**

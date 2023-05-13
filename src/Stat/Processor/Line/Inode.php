@@ -13,4 +13,12 @@ class Inode extends AbstractLineProcessor
     protected int $position = 2;
 
     protected int $positionColumn = 3;
+
+    /**
+     * @return int
+     */
+    protected function extractValue(): mixed
+    {
+        return (int)parent::extractValue();
+    }
 }

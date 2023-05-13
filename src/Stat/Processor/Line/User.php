@@ -14,6 +14,9 @@ class User extends AbstractLineProcessor
 
     protected int $positionColumn = 5;
 
+    /**
+     * @return string
+     */
     protected function extractValue(): mixed
     {
         $value = parent::extractValue();

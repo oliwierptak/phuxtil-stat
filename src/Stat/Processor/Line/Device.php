@@ -13,4 +13,12 @@ class Device extends AbstractLineProcessor
     protected int $position = 2;
 
     protected int $positionColumn = 1;
+
+    /**
+     * @return string
+     */
+    protected function extractValue(): mixed
+    {
+        return (string)parent::extractValue();
+    }
 }
