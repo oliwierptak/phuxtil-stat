@@ -6,25 +6,20 @@ namespace Phuxtil\Stat\Processor\Line;
 
 class Gid extends AbstractLineProcessor
 {
-    const TYPE = 'gid';
+    public const TYPE = 'gid';
 
-    /**
-     * @var string
-     */
-    protected $pattern = 'Access:';
+    protected string $pattern = 'Access:';
 
-    /**
-     * @var int
-     */
-    protected $position = 3;
+    protected int $position = 3;
 
-    protected function extractValue()
+    protected int $positionColumn = 8;
+
+    protected function extractValue(): mixed
     {
         $value = parent::extractValue();
 
-        $matches = [];
-        \preg_match('/Gid:\(([0-9]+)\/([^)]+)\)/', $value, $matches);
+        $value = preg_replace('([^0-9]+)', '', $value);
 
-        return (int)$matches[1];
+        return (int)$value;
     }
 }

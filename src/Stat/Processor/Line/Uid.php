@@ -6,26 +6,21 @@ namespace Phuxtil\Stat\Processor\Line;
 
 class Uid extends AbstractLineProcessor
 {
-    const TYPE = 'uid';
+    public const TYPE = 'uid';
 
-    /**
-     * @var string
-     */
-    protected $pattern = 'Access:';
+    protected string $pattern = 'Access:';
 
-    /**
-     * @var int
-     */
-    protected $position = 3;
+    protected int $position = 3;
 
-    protected function extractValue()
+    protected int $positionColumn = 4;
+
+    protected function extractValue(): mixed
     {
         $value = parent::extractValue();
 
-        $matches = [];
-        \preg_match('/Uid:\(([0-9]+)\/([^)]+)\)/', $value, $matches);
+        $value = preg_replace('([^0-9]+)', '', $value);
 
-        return (int)$matches[1];
+        return (int)$value;
     }
 
 }

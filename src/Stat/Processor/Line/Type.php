@@ -8,31 +8,27 @@ use Phuxtil\Stat\DefinesInterface;
 
 class Type extends AbstractLineProcessor
 {
-    const TYPE = 'type';
+    public const TYPE = 'type';
 
-    /**
-     * @var string
-     */
-    protected $pattern = 'Size:';
+    protected string $pattern = 'Size:';
 
-    /**
-     * @var int
-     */
-    protected $position = 1;
+    protected int $position = 1;
 
-    protected function extractValue()
+    protected int $positionColumn = 7;
+
+    protected function extractValue(): mixed
     {
-        $value = parent::extractValue();
-        $statTypes = DefinesInterface::STAT_TYPES;
+        $tokens = $this->extractLineTokens();
+        $value = trim((string) array_pop($tokens));
+        $valueSecondary = trim((string) array_pop($tokens));
+        $valueSecondary = preg_replace('([0-9]+)', '', $valueSecondary);
 
-        $matches = [];
-        \preg_match('/^([0-9]+)Blocks:([0-9]+)IOBlock:([0-9]+)(.*)$/', $value, $matches);
-        $value = $matches[4];
+        $value = $valueSecondary.$value;
 
-        if (!isset($statTypes[$value])) {
+        if (!isset(DefinesInterface::STAT_TYPES[$value])) {
             throw new \InvalidArgumentException('Unknown file type: ' . $value);
         }
 
-        return $statTypes[$value];
+        return DefinesInterface::STAT_TYPES[$value];
     }
 }

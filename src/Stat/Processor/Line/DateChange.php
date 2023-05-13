@@ -6,15 +6,9 @@ namespace Phuxtil\Stat\Processor\Line;
 
 class DateChange extends DateAccess
 {
-    const TYPE = 'filectime';
+    public const TYPE = 'filectime';
 
-    /**
-     * @var string
-     */
-    protected $pattern = 'Change:';
+    protected string $pattern = 'Change:';
 
-    /**
-     * @var int
-     */
-    protected $position = 6;
+    protected int $position = 6;
 }

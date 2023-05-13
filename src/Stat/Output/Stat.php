@@ -22,22 +22,14 @@ use Phuxtil\Stat\Processor\Line\User;
 
 class Stat
 {
-    /**
-     * @var string
-     */
-    protected $filename;
+    protected string $filename;
 
     /**
      * Bytes
-     *
-     * @var int
      */
-    protected $size;
+    protected int $size;
 
-    /**
-     * @var string
-     */
-    protected $type;
+    protected string $type;
 
     /**
      * @var string|int
@@ -59,50 +51,23 @@ class Stat
      */
     protected $dateChange;
 
-    /**
-     * @var int
-     */
-    protected $uid;
+    protected int $uid;
 
-    /**
-     * @var int
-     */
-    protected $gid;
+    protected int $gid;
 
-    /**
-     * @var string
-     */
-    protected $user;
+    protected string $user;
 
-    /**
-     * @var string
-     */
-    protected $group;
+    protected string $group;
 
-    /**
-     * @var int
-     */
-    protected $inode;
+    protected int $inode;
 
-    /**
-     * @var string
-     */
-    protected $device;
+    protected string $device;
 
-    /**
-     * @var int
-     */
-    protected $links;
+    protected int $links;
 
-    /**
-     * @var int
-     */
-    protected $blocks;
+    protected int $blocks;
 
-    /**
-     * @var int
-     */
-    protected $ioBlock;
+    protected int $ioBlock;
 
     public function getFilename(): string
     {

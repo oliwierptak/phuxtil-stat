@@ -6,25 +6,12 @@ namespace Phuxtil\Stat\Processor\Line;
 
 class Blocks extends AbstractLineProcessor
 {
-    const TYPE = 'blocks';
+    public const TYPE = 'blocks';
 
-    /**
-     * @var string
-     */
-    protected $pattern = 'Size:';
+    protected string $pattern = 'Size:';
 
-    /**
-     * @var int
-     */
-    protected $position = 1;
+    protected int $position = 1;
 
-    protected function extractValue()
-    {
-        $value = parent::extractValue();
+    protected int $positionColumn = 3;
 
-        $matches = [];
-        \preg_match('/([0-9]+)Blocks:([0-9]+)/', $value, $matches);
-
-        return $matches[2];
-    }
 }

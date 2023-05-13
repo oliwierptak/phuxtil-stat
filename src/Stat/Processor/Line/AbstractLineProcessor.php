@@ -8,27 +8,17 @@ use Phuxtil\Stat\Processor\LineProcessorInterface;
 
 abstract class AbstractLineProcessor implements LineProcessorInterface
 {
-    const TYPE = '';
+    public const TYPE = '';
 
-    /**
-     * @var string
-     */
-    protected $pattern = '';
+    protected string $pattern;
 
-    /**
-     * @var int
-     */
-    protected $position = 0;
+    protected int $position = 0;
 
-    /**
-     * @var string
-     */
-    protected $line = '';
+    protected int $positionColumn = 0;
 
-    /**
-     * @var string
-     */
-    protected $value = '';
+    protected string $line;
+
+    protected mixed $value;
 
     public function getPattern(): string
     {
@@ -40,34 +30,43 @@ abstract class AbstractLineProcessor implements LineProcessorInterface
         return $this->position;
     }
 
+    public function getPositionColumn(): int
+    {
+        return $this->positionColumn;
+    }
+
     public function getLine(): string
     {
         return $this->line;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getValue()
+    public function getValue(): mixed
     {
         return $this->value;
     }
 
-    public function processLine(string $line)
+    public function processLine(string $line, int $lineNumber): void
     {
-        $this->line = $line;
+        $this->line = trim($line);
 
         $this->value = $this->extractValue();
     }
 
-    /**
-     * @return string|int|null
-     */
-    protected function extractValue()
+    protected function extractValue(): mixed
     {
-        $value = preg_replace('/\s+/', '', $this->line);
-        $value = preg_replace('/^' . $this->pattern . '/', '', $value);
+        $tokens = $this->extractLineTokens();
 
-        return $value;
+        return trim($tokens[$this->positionColumn]);
+    }
+
+    protected function extractLineTokens(): array
+    {
+        $tokens = preg_split('/([:\s+])/', $this->line, -1, PREG_SPLIT_NO_EMPTY);
+
+        array_walk($tokens, static function(&$item){
+            $item = trim($item);
+        });
+
+        return $tokens;
     }
 }

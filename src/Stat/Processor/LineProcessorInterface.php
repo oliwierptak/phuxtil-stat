@@ -10,12 +10,11 @@ interface LineProcessorInterface
 
     public function getPosition(): int;
 
+    public function getPositionColumn(): int;
+
     public function getLine(): string;
 
-    /**
-     * @return mixed
-     */
-    public function getValue();
+    public function getValue(): mixed;
 
-    public function processLine(string $line);
+    public function processLine(string $line, int $lineNumber);
 }

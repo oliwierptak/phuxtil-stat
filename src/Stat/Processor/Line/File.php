@@ -6,35 +6,41 @@ namespace Phuxtil\Stat\Processor\Line;
 
 class File extends AbstractLineProcessor
 {
-    const TYPE = 'filename';
+    public const TYPE = 'filename';
 
-    /**
-     * @var string
-     */
-    protected $pattern = 'File:';
+    protected string $pattern = 'File:';
 
-    /**
-     * @var int
-     */
-    protected $position = 0;
+    protected int $position = 0;
+
+    protected int $positionColumn = 1;
 
     /**
      * Includes fix for different stat output for older versions
-     *
-     * @return int|string|null
      */
-    protected function extractValue()
+    protected function extractValue(): mixed
     {
+        $tokens = $this->extractLineTokens();
+        $value = implode(' ', $tokens);
         //fix for different stat output for older versions
-        $value = parent::extractValue();
+        $value = trim($value);
         if ($value[0] === '`') {
             $value = substr($value, 1, strlen($value));
         }
 
         if ($value[strlen($value)-1] === "'") {
-            $value = substr($value, 0, strlen($value)-1);
+            $value = substr($value, 0, -1);
         }
 
         return $value;
+    }
+
+
+    protected function extractLineTokens(): array
+    {
+        $tokens = parent::extractLineTokens();
+
+        array_shift($tokens);
+
+        return $tokens;
     }
 }
